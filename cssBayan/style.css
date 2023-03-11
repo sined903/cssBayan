@@ -68,7 +68,7 @@ body {
   height: 100%;
   appearance: none;
   z-index: 2;
-  grid-area: 1 / 1 / 1 / 4;
+  grid-area: 1 / 1 / 3 / 4;
 }
 
 .bayan__btn {
@@ -92,17 +92,20 @@ body {
 }
 
 .bayan__acc-content {
-  display: none;
+  height: 0;
   z-index: 1;
   grid-area: 2 / 1 / 2 / 4;
   padding: 1rem;
+  transition: all 0.3s linear;
 }
 
 .bayan__acc-content > img {
   display: block;
   width: 80%;
-  height: auto;
+  height: 0;
   margin: 0 auto;
+  transform: scale(0.8);
+  transition: all 0.3s linear;
 }
 
 .bayan__accord:hover .bayan__btn {
@@ -114,7 +117,12 @@ body {
 }
 
 .bayan__radio:checked ~ .bayan__acc-content {
-  display: block;
+  height: auto;
+}
+
+.bayan__radio:checked ~ .bayan__acc-content > img {
+  height: auto;
+  transform: scale(1);
 }
 
 .bayan__radio:checked + .bayan__acc-label {
